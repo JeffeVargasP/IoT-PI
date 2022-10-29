@@ -1,5 +1,4 @@
 import json
-import urllib.request
 import urllib
 import scrapy
 
@@ -17,5 +16,7 @@ if "Dólar" in Data[-1]:
 
 class dolarSpider(scrapy.Spider):
     name = "dolarSpider"
-    url = "https://www.google.com/finance/quote/USD-BRL?sa=X&ved=2ahUKEwihztzp_oP7AhWXCLkGHVVkBlMQmY0JegQICRAb"
-    dado = urllib.request.xpath("//div[@class='quote']")
+    url = ["https://www.google.com/finance/quote/USD-BRL?sa=X&ved=2ahUKEwihztzp_oP7AhWXCLkGHVVkBlMQmY0JegQICRAb"]
+
+    def parse(self, response):
+        pass
