@@ -1,15 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 
-import HomeCSS from '../../home/styles/main.module.css';
+import '../../home/styles/main.css';
 
 export default function RegisterComponent() {
     const navigate = useNavigate();
 
     return (
         <>
-            <div className={HomeCSS.container}>
-                <div className={HomeCSS.content}>
-                    <h1 className={HomeCSS.title}>Projeto Integrador</h1>
+            <div className='container'>
+                <div className='content'>
+                    <div className='title'>
+                        <h1 className='title_animation'>Fatec</h1>
+                        <h1 className='title_animation'>Projeto Integrador</h1>
+                    </div>
+                    <button>
+                        <div className='border_button'></div>
+                    </button>
                 </div>
             </div>
         </>
