@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Orbitron', sans-serif;
-    background: url('../../../assets/images/background.png') repeat;
+    background: url('images/background.png') repeat;
 }
 
 .container {
@@ -46,11 +46,16 @@ body {
 }
 
 @keyframes morph-effect {
-    0%, 20%, 100% {
+
+    0%,
+    20%,
+    100% {
         filter: blur(0px);
         opacity: 1;
     }
-    40%, 80% {
+
+    40%,
+    80% {
         filter: blur(16px);
         opacity: 0;
     }
