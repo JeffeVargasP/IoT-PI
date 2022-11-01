@@ -21,4 +21,3 @@ class CrawlerdolarSpider(scrapy.Spider):
 
         with open("data.json", "w") as datafile:
             json.dump(dolar, datafile, indent=4, sort_keys=True, ensure_ascii=False)
-
