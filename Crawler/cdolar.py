@@ -2,7 +2,9 @@
 #Hello Git God, help me.
 import json
 import scrapy
-dolar = {}
+datajson = {
+    "dolarValue":""
+}
 
 class dolarSpider(scrapy.Spider):
     name = 'crawlerDolar'
@@ -10,13 +12,14 @@ class dolarSpider(scrapy.Spider):
 
     def parse(self, response):
         value = response.xpath('//div[@class="YMlKec fxKbKc"]/text()').get()
-        dolar.append(value[:4])
+        dolar = value[:4]
+        datajson["dolarValue"] = dolar
 
-        with open("keywords.json", encoding='utf-8') as keywords:
+        with open("Crawler/keywords.json", encoding='utf-8') as keywords:
             Data = json.load(keywords)
         
         if "dolar" in Data[-1]:
             print("Dólar está caríssimo.")
 
-        with open("data.json", "w") as datafile:
-            json.dump(dolar, datafile, indent=4, sort_keys=True, ensure_ascii=False)
+        with open("Crawler/data.json", "w") as datafile:
+            json.dump(datajson, datafile, indent=4, sort_keys=True, ensure_ascii=False)
